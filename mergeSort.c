@@ -55,10 +55,11 @@ void merge(int slot[], int n, int m){
             for(i = b-1; i >= a; i--)
                 slot[i+1] = slot[i];
             slot[a] = temp;
+            b++;
         }
         else{ //1a == 1b
             //if there are last elements
-            if(slot[a] == slot[b])
+            if(a == b)
                 break; //since they alr in sorted position, dunnid do anything else once u cffm they are ==
             else{
                 //bring 1b to the back of 1a and push the rest backwards
@@ -67,6 +68,8 @@ void merge(int slot[], int n, int m){
                 for(i = b-1; i >= a+1; i--)
                     slot[i+1] = slot[i];
                 slot[a+1] = temp;
+                a++;
+                b++;
             }
         }
     }
