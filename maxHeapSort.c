@@ -3,8 +3,10 @@
 
 //max Heap
 
-static int heapSize;
+static int heapSize; //actual heap size
+// n : input array size
 
+//must always take in heapSize and not n else incorrect!
 void fixHeap(int H[], int n, int k, int rootI){
     //base case
     if(rootI*2 > n){
@@ -49,7 +51,7 @@ void heapifying(int H[], int n, int rootI){
     //right
     heapifying(H, n, rootI*2+1);
     //cur
-    fixHeap(H, heapSize, H[rootI], rootI);
+    fixHeap(H, heapSize, H[rootI], rootI); // or can use n instead of heapsort here since heapSize because as of now, heapSize is n as deleteMax is not called
     
 }
 
